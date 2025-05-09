@@ -1,0 +1,206 @@
+:root {
+    /* Paleta Principal */
+    --cor-primaria: #2a7afb;
+    --cor-primaria-escura: #1756c4;
+    --cor-secundaria: #5cb85c;
+    --cor-secundaria-escura: #376a37;
+
+    /* Cores Neutras */
+    --cor-texto: #333;
+    --cor-texto-secundaria: #444;
+    --cor-fundo: #f0f5ff;
+    --cor-fundo-component: #fff;
+    --cor-borda: #aba4a4;
+    --cor-borda-clara: #e1e1e1;
+
+    /* Cores feedback */
+    --cor-fundo-confirmacao: #e8f4ff;
+    --cor-borda-confirmacao: #aad4ff;
+
+    /* Espaçamentos */
+    --espacamento-pequeno: 8px;
+    --espacamento-medio: 15px;
+    --espacamento-padrao: 20px;
+    --espacamento-grande: 30px;
+
+    /* Efeitos */
+    --borda-arredondada: 4px;
+    --borda-arredondada-grande: 8px;
+    --sombra-padrao: 0 0 15px rgba(0, 0, 0, 0.1);
+    --transicao-padrao: 0.3s;
+}
+
+/* Reset da pagina */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilos gerais */
+
+header {
+    text-align: center;
+    margin-bottom: var(--espacamento-grande);
+    padding-bottom: var(--espacamento-medio);
+    border-bottom: 1px solid var(--cor-borda-clara);
+}
+header h1 {
+    color: var(--cor-primaria);
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+/* Formulario */
+#formulario-agendamento {
+    margin: auto;
+    width: 90%;
+}
+
+.form-group {
+    margin-bottom: var(--espacamento-padrao);
+}
+label {
+    display: block;
+    margin-bottom: var(--espacamento-pequeno);
+    font-weight: 600;
+    color: var(--cor-texto-secundaria);
+}
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--borda-arredondada);
+    font-size: 16px;
+    transition: border-color var(--transicao-padrao);
+}
+input:focus, select:focus {
+    border-color: var(--cor-primaria);
+    outline: none;
+    box-shadow: 0 0 5px rgba(41, 112, 230, 0.3);
+}
+button {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: var(--borda-arredondada);
+    cursor: pointer;
+    width: 100%;
+    transition: background-color var(--transicao-padrao);
+}
+button:hover {
+    background-color: var(--cor-primaria-escura);
+}
+
+/* Confirmação */
+
+.hidden {
+    display: none;
+}
+#confirmacao {
+    text-align: center;
+    padding: var(--espacamento-padrao);
+    background-color: var(--cor-fundo-confirmacao);
+    border-radius: var(--borda-arredondada-grande);
+    border: 1px solid var(--cor-borda-confirmacao);
+}
+#confirmacao h2 {
+    color: var(--cor-primaria);
+    margin-bottom: var(--espacamento-padrao);
+}
+#resumo-agendamento {
+    text-align: left;
+    background-color: var(--cor-fundo-component);
+    padding: var(--espacamento-medio);
+    border-radius: var(--borda-arredondada);
+    margin-bottom: var(--espacamento-padrao);
+    border: 1px solid var(--cor-borda);
+}
+#resumo-agendamento p {
+    margin-bottom: var(--espacamento-pequeno);
+}
+#resumo-agendamento strong {
+    font-weight: 600;
+    color: var(--cor-texto-secundaria);
+}
+#novo-agendamento {
+    background-color: var(--cor-secundaria);
+}
+#novo-agendamento:hover {
+    background-color: var(--cor-secundaria-escura);
+}
+
+/* Media Queries para Responsividade */
+
+/* Para telas menores (smartphones) - largura máxima de 768px */
+@media screen and (max-width: 768px) {
+    :root {
+        /* Atendendo ao requisito de reduzir margens e espaçamentos */
+        --spacing-lg: 15px;
+        --spacing-md: 10px;
+        --spacing-sm: 5px;
+    }
+    
+    .container {
+        /* Definindo largura como 100% e pequeno espaçamento interno (padding: 10px) */
+        width: 100%;
+        padding: 10px;
+    }
+
+    header {
+        padding: 15px 0;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .f.formulario-agendamento {
+        padding: 10px;
+    }
+
+    /* Aumentando tamanhos de fonte dos campos de entrada e botões (mínimo 16px) */
+    input, select, button {
+        font-size: 16px;
+        padding: 12px;
+        width: 100%;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+}
+
+/* Para telas intermediárias (tablets) - largura entre 768px e 1024px */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        /* Centralizando com 90% da largura da tela */
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .formulario-agendamento {
+        padding: 20px;
+    }
+    
+    /* Adicionando espaçamento equilibrado entre os campos */
+    .form-group {
+        margin-bottom: 18px;
+    }
+    
+    input, select {
+        padding: 12px;
+    }
+}
